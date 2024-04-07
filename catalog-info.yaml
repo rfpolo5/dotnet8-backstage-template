@@ -6,7 +6,7 @@ metadata:
   tags:
     - dotnet
   links:
-    - url: ${{ values.destination | dump }}
+    - url: https://github.com/${{values.destination.owner + "/" + values.destination.repo}}
       title: Source Code
       icon: github
     # - url: https://api.heroes.com
