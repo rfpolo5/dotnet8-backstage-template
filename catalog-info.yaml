@@ -20,6 +20,6 @@ spec:
   type: service
   lifecycle: experimental
   owner: ${{ values.owner | dump }}
-  system: ${{ values.system | dump }}
+  # system: ${{ values.system | dump }}
   # dependsOn: ['resource:heroes-db']
   # apiConsumedBy: ['component:www-heroes']
