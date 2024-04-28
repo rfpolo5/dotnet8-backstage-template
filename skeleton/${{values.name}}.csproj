@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>true</InvariantGlobalization>
-    <RootNamespace>dotnet8_backstage_template</RootNamespace>
+    <RootNamespace>${{values.name}}</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
