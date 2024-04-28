@@ -1,6 +1,6 @@
-@baseUrl = http://localhost:5171
+@skeleton_HostAddress = http://localhost:5197
 
-GET {{baseUrl}}/weatherforecast/
+GET {{skeleton_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
