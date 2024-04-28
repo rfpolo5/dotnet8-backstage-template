@@ -38,8 +38,8 @@ spec:
           description: The owner of the project
           ui:field: OwnerPicker
           ui:options:
-            catalogFilter:
-              kind: User
+            allowedKinds:
+              kind: Group
     - title: Choose a destination
       required:
         - repoUrl
@@ -56,10 +56,13 @@ spec:
   # You can see all actions you have registered here: http://localhost:3000/create/actions
   steps:
     - id: fetch-base
-      name: Fetch Base
+      name: Fetch Template
       action: fetch:template
       input:
         url: https://github.com/0GiS0/dotnet8-backstage-template
+        copyWithoutRender:
+          - .github/workflows/ci.yml
+          - docs/
         values:
           name: ${{ parameters.name }}
           owner: ${{ parameters.owner }}
