@@ -61,8 +61,7 @@ spec:
       input:
         url: https://github.com/0GiS0/dotnet8-backstage-template
         copyWithoutRender:
-          - .github/workflows/ci.yml
-          - docs/
+          - .github/workflows/ci.yml          
         values:
           name: ${{ parameters.name }}
           owner: ${{ parameters.owner }}
