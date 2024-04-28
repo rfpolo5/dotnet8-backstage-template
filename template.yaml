@@ -76,12 +76,6 @@ spec:
         contents: |
           # ${{ parameters.name }}
           ${{ parameters.description }}
-    - id: fetch-docs
-      name: Fetch Docs
-      action: fetch:plain
-      input:
-        targetPath: ./docs
-        url: https://github.com/0GiS0/dotnet8-backstage-template
     - id: publish
       name: Publish
       action: publish:github
