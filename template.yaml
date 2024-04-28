@@ -61,7 +61,7 @@ spec:
       input:
         url: ./skeleton
         copyWithoutRender:
-          - .github/workflows/ci.yml          
+          - .github/workflows/*    
         values:
           name: ${{ parameters.name }}
           owner: ${{ parameters.owner }}
