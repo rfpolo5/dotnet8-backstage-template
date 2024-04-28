@@ -5,10 +5,8 @@ metadata:
   description: ${{ values.description | dump }}
   tags:
     - dotnet
-  links:
-    - url: ${{ values.repoUrl | dump }}
-      title: Source Code
-      icon: github
+    - csharp
+    - webapi
   annotations:
     # this could also be `url:<url>` if the documentation isn't in the same location
     github.com/project-slug: ${{values.destination.owner + "/" + values.destination.repo}}
