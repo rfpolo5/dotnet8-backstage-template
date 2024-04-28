@@ -1,6 +1,6 @@
-@skeleton_HostAddress = http://localhost:5197
+@dotnet_test_HostAddress = http://localhost:5031
 
-GET {{skeleton_HostAddress}}/weatherforecast/
+GET {{dotnet_test_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
