@@ -35,11 +35,11 @@ spec:
         owner:
           title: Owner
           type: string
-          description: The owner of the project
+          description: Owner of the component
           ui:field: OwnerPicker
           ui:options:
-            allowedKinds:
-              kind: User
+            catalogFilter:
+              kind: Group
     - title: Choose a destination
       required:
         - repoUrl
