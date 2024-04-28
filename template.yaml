@@ -59,7 +59,7 @@ spec:
       name: Fetch Template
       action: fetch:template
       input:
-        url: https://github.com/0GiS0/dotnet8-backstage-template
+        url: ./skeleton
         copyWithoutRender:
           - .github/workflows/ci.yml          
         values:
