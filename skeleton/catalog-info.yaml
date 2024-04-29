@@ -7,6 +7,11 @@ metadata:
     - dotnet
     - csharp
     - webapi
+  
+  links:
+    - url: https://github.com/${{values.destination.owner + "/" + values.destination.repo}}
+      title: Repository
+
   annotations:
     # this could also be `url:<url>` if the documentation isn't in the same location
     github.com/project-slug: ${{values.destination.owner + "/" + values.destination.repo}}
