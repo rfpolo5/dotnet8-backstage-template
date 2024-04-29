@@ -21,6 +21,7 @@ spec:
       required:
         - name
         - description
+        - system
       properties:
         name:
           type: string
@@ -40,6 +41,14 @@ spec:
           ui:options:
             catalogFilter:
               kind: Group
+        system:
+          title: System
+          type: string
+          description: The system the component belongs to
+          ui:field: EntityPicker
+          ui:options:
+            catalogFilter:
+              kind: System
     - title: Choose a destination
       required:
         - repoUrl
@@ -71,11 +80,12 @@ spec:
           description: ${{ parameters.description }}
           destination: ${{ parameters.repoUrl | parseRepoUrl }}
           repoUrl: ${{ parameters.repoUrl }}
+          system: ${{ parameters.system }}
     - id: acme:file:create
       name: Create a file
       action: acme:file:create
       input:
-        filename: prueba.md
+        filename: docs/prueba.md
         contents: |
           # ${{ parameters.name }}
           ${{ parameters.description }}
