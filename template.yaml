@@ -28,7 +28,7 @@ spec:
           title: Project Name
           description: The name of the project
           ui:autofocus: true          
-          # ui:field: ValidateKebabCase # Custom field extension
+          ui:field: ValidateKebabCase # Custom field extension
         description:
           title: Description
           type: string
