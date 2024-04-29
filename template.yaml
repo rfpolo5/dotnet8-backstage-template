@@ -54,8 +54,8 @@ spec:
           title: Repository URL
           type: string
           description: The URL of the repository
-          ui:field: RepoUrlPicker
-          ui:options:
+          ui:field: RepoUrlPicker          
+          ui:options:            
             allowedOwners:
               - 0GiS0
               - returngis
@@ -79,13 +79,14 @@ spec:
           repoUrl: ${{ parameters.repoUrl }}
           system: ${{ parameters.system }}
     - id: acme:file:create
-      name: Create a file
+      name: Create a README file
       action: acme:file:create
       input:
-        filename: docs/prueba.md
+        filename: README.md
         contents: |
-          # ${{ parameters.name }}
+          # ${{ parameters.name }}          
           ${{ parameters.description }}
+          This is a new .NET 8 project created with 💚 using Backstage.
     - id: publish
       name: Publish
       action: publish:github
