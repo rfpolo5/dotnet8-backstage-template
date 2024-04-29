@@ -34,13 +34,10 @@ spec:
           type: string
           description: A description for the component
         owner:
-          title: Owner
+          title: Select in which group the component will be created
           type: string
-          description: Owner of the component
-          ui:field: OwnerPicker
-          ui:options:
-            catalogFilter:
-              kind: Group
+          description: The group the component belongs to
+          ui:field: MyGroupsPicker          
         system:
           title: System
           type: string
