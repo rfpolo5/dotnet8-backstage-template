@@ -132,5 +132,3 @@ spec:
       - title: Open in catalog
         icon: catalog
         entityRef: ${{ steps['register'].output.entityRef }}
-      - title: See GitHub Action
-        url: ${{ steps['github-action'].output.url }}
