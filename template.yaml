@@ -11,7 +11,7 @@ metadata:
     - webapi
     - recommended
 spec:
-  owner: user:0GiS0
+  owner: user:rfpolo5
   type: service
   # these are the steps which are rendered in the frontend with the form input
   # https://backstage.io/docs/features/software-templates/input-examples
