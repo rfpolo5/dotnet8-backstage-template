@@ -35,4 +35,65 @@ spec:
         system:
           type: string
           title: "System"
-          description:
+          description: "The system the component belongs to"
+
+    - title: "Choose a destination"
+      required:
+        - repoUrl
+      properties:
+        repoUrl:
+          type: string
+          title: "Repository URL"
+          description: "The URL of the repository"
+
+  steps:  # ⚠️ IMPORTANTE: Esto no debe faltar
+    - id: fetch-base
+      name: Fetch Template
+      action: fetch:template
+      input:
+        url: ./skeleton
+        copyWithoutTemplating:
+          - .github/workflows/*
+        values:
+          name: ${{ parameters.name }}
+          owner: ${{ parameters.owner }}
+          description: ${{ parameters.description }}
+          destination: ${{ parameters.repoUrl | parseRepoUrl }}
+          repoUrl: ${{ parameters.repoUrl }}
+          system: ${{ parameters.system }}
+
+    - id: create-readme
+      name: Create a README file
+      action: fs:write
+      input:
+        path: README.md
+        content: |
+          # ${{ parameters.name }}          
+          ${{ parameters.description }}
+          
+          This is a new .NET 8 project created with 💚 using Backstage.
+
+    - id: publish
+      name: Publish to GitHub
+      action: publish:github
+      input:
+        allowedHosts: ["github.com"]
+        description: "This is ${{ parameters.name }}"
+        repoUrl: ${{ parameters.repoUrl }}
+        gitCommitMessage: "Create scaffold"
+        topics: ["backstage-include", "dotnet8"]
+
+    - id: register
+      name: Register in Backstage
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+        catalogInfoPath: "/catalog-info.yaml"
+
+  output:
+    links:
+      - title: "Repository"
+        url: ${{ steps['publish'].output.remoteUrl }}
+      - title: "Open in catalog"
+        icon: catalog
+        entityRef: ${{ steps['register'].output.entityRef }}
